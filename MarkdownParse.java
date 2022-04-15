@@ -32,7 +32,10 @@ public class MarkdownParse {
                     break;
                 }
             }
-            String beforeOpenBracket = markdown.substring(openBracket - 1, openBracket);
+            String beforeOpenBracket = "";
+            if(openBracket != 0) {
+                beforeOpenBracket = markdown.substring(openBracket - 1, openBracket);
+            }
             if (!beforeOpenBracket.equals("!")) {
                 toReturn.add(markdown.substring(openParen + 1, closeParen));
             }
