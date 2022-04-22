@@ -101,13 +101,13 @@ public class MarkdownParseTest {
         assertEquals(expected, MarkdownParse.getLinks(test_file));
     }
 
-    // @Test
-    // public void testGetLinks11() throws IOException {
-    //     Path filePath = Path.of("./new-test-file8.md");
-    //     String test_file = Files.readString(filePath);
-    //     List<String> expected = List.of();
-    //     assertEquals(expected, MarkdownParse.getLinks(test_file));
-    // }
+    @Test
+    public void testGetLinks11() throws IOException {
+        Path filePath = Path.of("./new-test-file8.md");
+        String test_file = Files.readString(filePath);
+        List<String> expected = List.of();
+        assertEquals(expected, MarkdownParse.getLinks(test_file));
+    }
 
     @Test
     public void testGetLinks12() throws IOException {
