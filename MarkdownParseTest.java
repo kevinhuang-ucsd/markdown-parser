@@ -15,7 +15,7 @@ public class MarkdownParseTest {
 
     @Test
     public void testGetLinks0() throws IOException {
-        Path filePath = Path.of("./my-test-file.md");
+        Path filePath = Path.of("./test-file.md");
         String test_file = Files.readString(filePath);
         List<String> expected = List.of("https://something.com", "some-thing.html");
         assertEquals(expected, MarkdownParse.getLinks(test_file));
@@ -23,7 +23,7 @@ public class MarkdownParseTest {
 
     @Test
     public void testGetLinks1() throws IOException {
-        Path filePath = Path.of("./my-test-file1.md");
+        Path filePath = Path.of("./test-file1.md");
         String test_file = Files.readString(filePath);
         List<String> expected = List.of("http://msdn.microsoft.com/en-us/library/aa752574(VS.85).aspx", "some-thing.html");
         assertEquals(expected, MarkdownParse.getLinks(test_file));
@@ -31,7 +31,7 @@ public class MarkdownParseTest {
 
     @Test
     public void testGetLinks2() throws IOException {
-        Path filePath = Path.of("./my-test-file2.md");
+        Path filePath = Path.of("./test-file2.md");
         String test_file = Files.readString(filePath);
         List<String> expected = List.of();
         assertEquals(expected, MarkdownParse.getLinks(test_file));
@@ -39,7 +39,7 @@ public class MarkdownParseTest {
 
     @Test
     public void testGetLinks3() throws IOException {
-        Path filePath = Path.of("./my-test-file3.md");
+        Path filePath = Path.of("./test-file3.md");
         String test_file = Files.readString(filePath);
         List<String> expected = List.of("http://msdn.microsoft.com/en-us/library/aa752574(VS.85).aspx", "some-thing.html", "some-thing2.html");
         assertEquals(expected, MarkdownParse.getLinks(test_file));
@@ -47,17 +47,73 @@ public class MarkdownParseTest {
 
     @Test
     public void testGetLinks4() throws IOException {
-        Path filePath = Path.of("./my-test-file4.md");
+        Path filePath = Path.of("./test-file4.md");
         String test_file = Files.readString(filePath);
         List<String> expected = List.of("some-thing.html");
         assertEquals(expected, MarkdownParse.getLinks(test_file));
     }
 
     @Test
-    public void testGetLinks() throws IOException {
+    public void testGetLinks5() throws IOException {
         Path filePath = Path.of("./new-test-file2.md");
         String test_file = Files.readString(filePath);
-        List<String> expected = List.of("https://something.com","some-thing.html");
+        List<String> expected = List.of("https://something.com", "some-page.html");
+        assertEquals(expected, MarkdownParse.getLinks(test_file));
+    }
+
+    @Test
+    public void testGetLinks6() throws IOException {
+        Path filePath = Path.of("./new-test-file3.md");
+        String test_file = Files.readString(filePath);
+        List<String> expected = List.of();
+        assertEquals(expected, MarkdownParse.getLinks(test_file));
+    }
+
+    @Test
+    public void testGetLinks7() throws IOException {
+        Path filePath = Path.of("./new-test-file4.md");
+        String test_file = Files.readString(filePath);
+        List<String> expected = List.of();
+        assertEquals(expected, MarkdownParse.getLinks(test_file));
+    }
+
+    @Test
+    public void testGetLinks8() throws IOException {
+        Path filePath = Path.of("./new-test-file5.md");
+        String test_file = Files.readString(filePath);
+        List<String> expected = List.of();
+        assertEquals(expected, MarkdownParse.getLinks(test_file));
+    }
+
+    @Test
+    public void testGetLinks9() throws IOException {
+        Path filePath = Path.of("./new-test-file6.md");
+        String test_file = Files.readString(filePath);
+        List<String> expected = List.of();
+        assertEquals(expected, MarkdownParse.getLinks(test_file));
+    }
+
+    @Test
+    public void testGetLinks10() throws IOException {
+        Path filePath = Path.of("./new-test-file7.md");
+        String test_file = Files.readString(filePath);
+        List<String> expected = List.of();
+        assertEquals(expected, MarkdownParse.getLinks(test_file));
+    }
+
+    // @Test
+    // public void testGetLinks11() throws IOException {
+    //     Path filePath = Path.of("./new-test-file8.md");
+    //     String test_file = Files.readString(filePath);
+    //     List<String> expected = List.of();
+    //     assertEquals(expected, MarkdownParse.getLinks(test_file));
+    // }
+
+    @Test
+    public void testGetLinks12() throws IOException {
+        Path filePath = Path.of("./new-test-file.md");
+        String test_file = Files.readString(filePath);
+        List<String> expected = List.of("https://something.com", "some-thing.html");
         assertEquals(expected, MarkdownParse.getLinks(test_file));
     }
 }
