@@ -113,7 +113,7 @@ public class MarkdownParseTest {
     public void testGetLinks12() throws IOException {
         Path filePath = Path.of("./new-test-file.md");
         String test_file = Files.readString(filePath);
-        List<String> expected = List.of("https://something.com", "some-thing.htm");
+        List<String> expected = List.of("https://something.com", "some-thing.html");
         assertEquals(expected, MarkdownParse.getLinks(test_file));
     }
 }
