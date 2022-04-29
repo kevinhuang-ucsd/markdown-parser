@@ -19,6 +19,10 @@ public class MarkdownParse {
             if (openParen == -1 || closeBracket == -1 || openBracket == -1) {
                 break;
             }
+            if (closeBracket != markdown.length() - 1 && markdown.substring(closeBracket + 1, closeBracket + 2).equals("[")) {
+                openBracket = closeBracket + 1;
+                closeBracket = markdown.indexOf("]", openBracket);
+            }
             int countOpenBracket = 1;
             int closeParen = -1;
             for (int i = openParen + 1; i < markdown.length(); i ++) {
@@ -33,7 +37,7 @@ public class MarkdownParse {
                 }
             }
             String beforeOpenBracket = "";
-            if(openBracket != 0) {
+            if (openBracket != 0) {
                 beforeOpenBracket = markdown.substring(openBracket - 1, openBracket);
             }
             if (!beforeOpenBracket.equals("!") && (closeBracket == openParen - 1) && (closeBracket != openBracket + 1)) {
