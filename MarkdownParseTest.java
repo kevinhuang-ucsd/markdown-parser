@@ -125,13 +125,13 @@ public class MarkdownParseTest {
         assertEquals(expected, MarkdownParse.getLinks(test_file));
     }
 
-    @Test
-    public void testWeek8File0() throws IOException {
-        Path filePath = Path.of("./week8-test-file.md");
-        String test_file = Files.readString(filePath);
-        List<String> expected = List.of("`google.com", "google.com", "ucsd.edu");
-        assertEquals(expected, MarkdownParse.getLinks(test_file));
-    }
+    // @Test
+    // public void testWeek8File0() throws IOException {
+    //     Path filePath = Path.of("./week8-test-file.md");
+    //     String test_file = Files.readString(filePath);
+    //     List<String> expected = List.of("`google.com", "google.com", "ucsd.edu");
+    //     assertEquals(expected, MarkdownParse.getLinks(test_file));
+    // }
 
     // @Test
     // public void testWeek8File1() throws IOException {
